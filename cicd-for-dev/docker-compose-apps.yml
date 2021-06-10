@@ -1,0 +1,26 @@
+version: "3.1"
+services:
+  backend-service:
+    container_name: backend-service
+    image: backend-service:DEV
+    ports:
+      - "38080:8080"
+    networks:
+      - subscriptions_network
+  subscription-service:
+    container_name: subscription-service
+    image: subscription-service:DEV
+    ports:
+      - "38081:8081"
+    networks:
+      - subscriptions_network
+  email-service:
+    container_name: email-service
+    image: email-service:DEV
+    ports:
+      - "38082:8082"
+    networks:
+      - subscriptions_network
+networks:
+  subscriptions_network:
+    external: true

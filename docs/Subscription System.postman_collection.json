@@ -1,0 +1,2050 @@
+{
+	"info": {
+		"_postman_id": "cb9f582a-af6a-4c97-bddc-dbf910738668",
+		"name": "Subscription System",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Backend",
+			"item": [
+				{
+					"name": "Get All",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "Postman",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "PostmanToken",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:38080/rest/subscriptions",
+							"host": [
+								"localhost"
+							],
+							"port": "38080",
+							"path": [
+								"rest",
+								"subscriptions"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get All",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:38080/rest/subscriptions",
+									"host": [
+										"localhost"
+									],
+									"port": "38080",
+									"path": [
+										"rest",
+										"subscriptions"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 10 Jun 2021 15:58:36 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"subscriptionId\": 1,\n        \"email\": \"JohnDoe@fakemail.com\",\n        \"firstName\": \"John\",\n        \"gender\": \"Male\",\n        \"consent\": true,\n        \"birthdate\": \"1990-04-04\",\n        \"newsletterId\": 1\n    },\n    {\n        \"subscriptionId\": 2,\n        \"email\": \"JaneDoe@fakemail.com\",\n        \"firstName\": null,\n        \"gender\": null,\n        \"consent\": true,\n        \"birthdate\": \"1990-12-25\",\n        \"newsletterId\": 2\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Get One",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "Postman",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "PostmanToken",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:38080/rest/subscriptions/1",
+							"host": [
+								"localhost"
+							],
+							"port": "38080",
+							"path": [
+								"rest",
+								"subscriptions",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get One",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:38080/rest/subscriptions/1",
+									"host": [
+										"localhost"
+									],
+									"port": "38080",
+									"path": [
+										"rest",
+										"subscriptions",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 10 Jun 2021 15:58:42 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"subscriptionId\": 1,\n        \"email\": \"JohnDoe@fakemail.com\",\n        \"firstName\": \"John\",\n        \"gender\": \"Male\",\n        \"consent\": true,\n        \"birthdate\": \"1990-04-04\",\n        \"newsletterId\": 1\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Add one OK",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "Postman",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "PostmanToken",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"email\": \"darthmaul@gmail.com\",\n        \"firstName\": \"Darth Maul\",\n        \"consent\": true,\n        \"birthdate\": \"1990-04-04\",\n        \"newsletterId\": 5\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:38080/rest/subscriptions",
+							"host": [
+								"localhost"
+							],
+							"port": "38080",
+							"path": [
+								"rest",
+								"subscriptions"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Add one OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n        \"email\": \"darthmaul@gmail.com\",\n        \"firstName\": \"Darth Maul\",\n        \"consent\": true,\n        \"birthdate\": \"1990-04-04\",\n        \"newsletterId\": 5\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:38080/rest/subscriptions",
+									"host": [
+										"localhost"
+									],
+									"port": "38080",
+									"path": [
+										"rest",
+										"subscriptions"
+									]
+								}
+							},
+							"status": "Expectation Failed",
+							"code": 417,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "107"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 10 Jun 2021 15:58:56 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Message\": \"Element already exists\",\n    \"Resource-Uri\": \"http://subscription-service:8081/rest/subscriptions/3\"\n}"
+						},
+						{
+							"name": "Add one OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n        \"email\": \"darthmaul@gmail.com\",\n        \"firstName\": \"Darth Maul\",\n        \"consent\": true,\n        \"birthdate\": \"1990-04-04\",\n        \"newsletterId\": 5\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:38080/rest/subscriptions",
+									"host": [
+										"localhost"
+									],
+									"port": "38080",
+									"path": [
+										"rest",
+										"subscriptions"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "18"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 10 Jun 2021 15:58:48 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Created-Id\": \"3\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Add one KO",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "PostmanToken",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "Postman",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \n        \"newsletterId\": 5\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:38080/rest/subscriptions",
+							"host": [
+								"localhost"
+							],
+							"port": "38080",
+							"path": [
+								"rest",
+								"subscriptions"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Add one KO",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n        \n        \"newsletterId\": 5\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:38080/rest/subscriptions",
+									"host": [
+										"localhost"
+									],
+									"port": "38080",
+									"path": [
+										"rest",
+										"subscriptions"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 10 Jun 2021 15:59:04 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"timestamp\": \"2021-06-10T15:59:04.262+00:00\",\n    \"status\": 400,\n    \"error\": \"Bad Request\",\n    \"path\": \"/rest/subscriptions\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete OK",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "PostmanToken",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "Postman",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:38080/rest/subscriptions/4",
+							"host": [
+								"localhost"
+							],
+							"port": "38080",
+							"path": [
+								"rest",
+								"subscriptions",
+								"4"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete OK",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:38080/rest/subscriptions/3",
+									"host": [
+										"localhost"
+									],
+									"port": "38080",
+									"path": [
+										"rest",
+										"subscriptions",
+										"3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 10 Jun 2021 15:59:13 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Backend Minikube",
+			"item": [
+				{
+					"name": "Get All",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "Postman",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "PostmanToken",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://192.168.49.2:30000/rest/subscriptions",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"49",
+								"2"
+							],
+							"port": "30000",
+							"path": [
+								"rest",
+								"subscriptions"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get All",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://192.168.49.2:30000/rest/subscriptions",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"49",
+										"2"
+									],
+									"port": "30000",
+									"path": [
+										"rest",
+										"subscriptions"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 10 Jun 2021 15:59:24 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"subscriptionId\": 1,\n        \"email\": \"JohnDoe@fakemail.com\",\n        \"firstName\": \"John\",\n        \"gender\": \"Male\",\n        \"consent\": true,\n        \"birthdate\": \"1990-04-04\",\n        \"newsletterId\": 1\n    },\n    {\n        \"subscriptionId\": 2,\n        \"email\": \"JaneDoe@fakemail.com\",\n        \"firstName\": null,\n        \"gender\": null,\n        \"consent\": true,\n        \"birthdate\": \"1990-12-25\",\n        \"newsletterId\": 2\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Get One",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "Postman",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "PostmanToken",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://192.168.49.2:30000/rest/subscriptions/1",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"49",
+								"2"
+							],
+							"port": "30000",
+							"path": [
+								"rest",
+								"subscriptions",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get One",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://192.168.49.2:30000/rest/subscriptions/1",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"49",
+										"2"
+									],
+									"port": "30000",
+									"path": [
+										"rest",
+										"subscriptions",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 10 Jun 2021 15:59:30 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"subscriptionId\": 1,\n        \"email\": \"JohnDoe@fakemail.com\",\n        \"firstName\": \"John\",\n        \"gender\": \"Male\",\n        \"consent\": true,\n        \"birthdate\": \"1990-04-04\",\n        \"newsletterId\": 1\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Add one OK",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "Postman",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "PostmanToken",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"email\": \"darthmaul@gmail.com\",\n        \"firstName\": \"Darth Maul\",\n        \"consent\": true,\n        \"birthdate\": \"1990-04-04\",\n        \"newsletterId\": 5\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://192.168.49.2:30000/rest/subscriptions",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"49",
+								"2"
+							],
+							"port": "30000",
+							"path": [
+								"rest",
+								"subscriptions"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Add one OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n        \"email\": \"darthmaul@gmail.com\",\n        \"firstName\": \"Darth Maul\",\n        \"consent\": true,\n        \"birthdate\": \"1990-04-04\",\n        \"newsletterId\": 5\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://192.168.49.2:30000/rest/subscriptions",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"49",
+										"2"
+									],
+									"port": "30000",
+									"path": [
+										"rest",
+										"subscriptions"
+									]
+								}
+							},
+							"status": "Expectation Failed",
+							"code": 417,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "107"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 10 Jun 2021 15:59:43 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Message\": \"Element already exists\",\n    \"Resource-Uri\": \"http://subscription-service:8081/rest/subscriptions/4\"\n}"
+						},
+						{
+							"name": "Add one OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n        \"email\": \"darthmaul@gmail.com\",\n        \"firstName\": \"Darth Maul\",\n        \"consent\": true,\n        \"birthdate\": \"1990-04-04\",\n        \"newsletterId\": 5\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://192.168.49.2:30000/rest/subscriptions",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"49",
+										"2"
+									],
+									"port": "30000",
+									"path": [
+										"rest",
+										"subscriptions"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "18"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 10 Jun 2021 15:59:36 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Created-Id\": \"4\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Add one KO",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "PostmanToken",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "Postman",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \n        \"newsletterId\": 5\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://192.168.49.2:30000/rest/subscriptions",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"49",
+								"2"
+							],
+							"port": "30000",
+							"path": [
+								"rest",
+								"subscriptions"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Add one KO",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n        \n        \"newsletterId\": 5\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://192.168.49.2:30000/rest/subscriptions",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"49",
+										"2"
+									],
+									"port": "30000",
+									"path": [
+										"rest",
+										"subscriptions"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 10 Jun 2021 15:59:47 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"timestamp\": \"2021-06-10T15:59:47.873+00:00\",\n    \"status\": 400,\n    \"error\": \"Bad Request\",\n    \"path\": \"/rest/subscriptions\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete OK",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "PostmanToken",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "Postman",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://192.168.49.2:30000/rest/subscriptions/3",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"49",
+								"2"
+							],
+							"port": "30000",
+							"path": [
+								"rest",
+								"subscriptions",
+								"3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete OK",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://192.168.49.2:30000/rest/subscriptions/3",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"49",
+										"2"
+									],
+									"port": "30000",
+									"path": [
+										"rest",
+										"subscriptions",
+										"3"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 10 Jun 2021 15:59:53 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Subscription Service",
+			"item": [
+				{
+					"name": "Get All",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "PostmanToken",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "Postman",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:38081/rest/subscriptions",
+							"host": [
+								"localhost"
+							],
+							"port": "38081",
+							"path": [
+								"rest",
+								"subscriptions"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get All",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:38081/rest/subscriptions",
+									"host": [
+										"localhost"
+									],
+									"port": "38081",
+									"path": [
+										"rest",
+										"subscriptions"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Subscriptions-Found-Amount",
+									"value": "2"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 10 Jun 2021 16:00:03 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": \"OK\",\n    \"subscriptionData\": [\n        {\n            \"subscriptionId\": 1,\n            \"email\": \"JohnDoe@fakemail.com\",\n            \"firstName\": \"John\",\n            \"gender\": \"Male\",\n            \"consent\": true,\n            \"birthdate\": \"1990-04-04\",\n            \"newsletterId\": 1\n        },\n        {\n            \"subscriptionId\": 2,\n            \"email\": \"JaneDoe@fakemail.com\",\n            \"firstName\": null,\n            \"gender\": null,\n            \"consent\": true,\n            \"birthdate\": \"1990-12-25\",\n            \"newsletterId\": 2\n        }\n    ],\n    \"payload\": {\n        \"Subscriptions-Found-Amount\": \"2\"\n    },\n    \"message\": \"Amount of elements found: 2\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get One",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "Postman",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "PostmanToken",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Access-Token",
+								"value": "JAVIs",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "localhost:38081/rest/subscriptions/2",
+							"host": [
+								"localhost"
+							],
+							"port": "38081",
+							"path": [
+								"rest",
+								"subscriptions",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get One",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-Access-Token",
+										"value": "JAVIs",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "localhost:38081/rest/subscriptions/2",
+									"host": [
+										"localhost"
+									],
+									"port": "38081",
+									"path": [
+										"rest",
+										"subscriptions",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Subscription-Id-Found",
+									"value": "2"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 10 Jun 2021 16:00:09 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": \"OK\",\n    \"subscriptionData\": [\n        {\n            \"subscriptionId\": 2,\n            \"email\": \"JaneDoe@fakemail.com\",\n            \"firstName\": null,\n            \"gender\": null,\n            \"consent\": true,\n            \"birthdate\": \"1990-12-25\",\n            \"newsletterId\": 2\n        }\n    ],\n    \"payload\": {\n        \"Subscription-Id-Found\": \"2\"\n    },\n    \"message\": \"Entity of email: JaneDoe@fakemail.com was found (id: 2).\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Add one OK",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "PostmanToken",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "Postman",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"email\": \"darthvader@gmail.com\",\n        \"firstName\": \"Darth Vader\",\n        \"consent\": true,\n        \"birthdate\": \"1990-04-04\",\n        \"newsletterId\": 5\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:38081/rest/subscriptions",
+							"host": [
+								"localhost"
+							],
+							"port": "38081",
+							"path": [
+								"rest",
+								"subscriptions"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Add one OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n        \"email\": \"darthvader@gmail.com\",\n        \"firstName\": \"Darth Vader\",\n        \"consent\": true,\n        \"birthdate\": \"1990-04-04\",\n        \"newsletterId\": 5\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:38081/rest/subscriptions",
+									"host": [
+										"localhost"
+									],
+									"port": "38081",
+									"path": [
+										"rest",
+										"subscriptions"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Subscription-Id-Created",
+									"value": "4"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 10 Jun 2021 16:00:13 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": \"CREATED\",\n    \"subscriptionData\": [\n        {\n            \"subscriptionId\": 4,\n            \"email\": \"darthvader@gmail.com\",\n            \"firstName\": \"Darth Vader\",\n            \"gender\": null,\n            \"consent\": true,\n            \"birthdate\": \"1990-04-04\",\n            \"newsletterId\": 5\n        }\n    ],\n    \"payload\": {\n        \"Subscription-Id-Created\": \"4\"\n    },\n    \"message\": \"Created entry with email: darthvader@gmail.com and id: 4\"\n}"
+						},
+						{
+							"name": "Add one OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n        \"email\": \"darthvader@gmail.com\",\n        \"firstName\": \"Darth Vader\",\n        \"consent\": true,\n        \"birthdate\": \"1990-04-04\",\n        \"newsletterId\": 5\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:38081/rest/subscriptions",
+									"host": [
+										"localhost"
+									],
+									"port": "38081",
+									"path": [
+										"rest",
+										"subscriptions"
+									]
+								}
+							},
+							"status": "Found",
+							"code": 302,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Subscription-Id-Found",
+									"value": "4"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 10 Jun 2021 16:00:19 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": \"FOUND\",\n    \"subscriptionData\": [\n        {\n            \"subscriptionId\": 4,\n            \"email\": \"darthvader@gmail.com\",\n            \"firstName\": \"Darth Vader\",\n            \"gender\": null,\n            \"consent\": true,\n            \"birthdate\": \"1990-04-04\",\n            \"newsletterId\": 5\n        }\n    ],\n    \"payload\": {\n        \"Subscription-Id-Found\": \"4\"\n    },\n    \"message\": \"Entry of email: darthvader@gmail.com already exists.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Add one KO",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "Postman",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "PostmanToken",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"email\": \"JamessDo2fakemail.com\",\n        \"birthdate\": \"3990-04-04\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:38081/rest/subscriptions",
+							"host": [
+								"localhost"
+							],
+							"port": "38081",
+							"path": [
+								"rest",
+								"subscriptions"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Add one KO",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n        \"email\": \"JamessDo2fakemail.com\",\n        \"birthdate\": \"3990-04-04\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:38081/rest/subscriptions",
+									"host": [
+										"localhost"
+									],
+									"port": "38081",
+									"path": [
+										"rest",
+										"subscriptions"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 10 Jun 2021 16:00:24 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": \"BAD_REQUEST\",\n    \"subscriptionData\": null,\n    \"payload\": {\n        \"Message\": \"Validation error\",\n        \"Error-Values\": \"[Field error in object 'subscription' on field 'consent': rejected value [null]; codes [NotNull.subscription.consent,NotNull.consent,NotNull.java.lang.Boolean,NotNull]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [subscription.consent,consent]; arguments []; default message [consent]]; default message [Consent must be specified], Field error in object 'subscription' on field 'email': rejected value [JamessDo2fakemail.com]; codes [Pattern.subscription.email,Pattern.email,Pattern.java.lang.String,Pattern]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [subscription.email,email]; arguments []; default message [email],[Ljavax.validation.constraints.Pattern$Flag;@55667b3a,^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\\\.[A-Z]{2,6}$]; default message [Email must be valid], Field error in object 'subscription' on field 'birthdate': rejected value [3990-04-04]; codes [Past.subscription.birthdate,Past.birthdate,Past.java.time.LocalDate,Past]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [subscription.birthdate,birthdate]; arguments []; default message [birthdate]]; default message [Birthdate cannot be in the future], Field error in object 'subscription' on field 'newsletterId': rejected value [null]; codes [NotNull.subscription.newsletterId,NotNull.newsletterId,NotNull.java.lang.Long,NotNull]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [subscription.newsletterId,newsletterId]; arguments []; default message [newsletterId]]; default message [Newsletter Id must be specified]]\",\n        \"Error-Message\": \"Validation failed for argument [0] in public org.springframework.http.ResponseEntity<es.javier.subscriptionservice.model.SubscriptionResponseInformation> es.javier.subscriptionservice.rest.SubscriptionRestController.postEntity(es.javier.subscriptionservice.model.Subscription) with 4 errors: [Field error in object 'subscription' on field 'consent': rejected value [null]; codes [NotNull.subscription.consent,NotNull.consent,NotNull.java.lang.Boolean,NotNull]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [subscription.consent,consent]; arguments []; default message [consent]]; default message [Consent must be specified]] [Field error in object 'subscription' on field 'email': rejected value [JamessDo2fakemail.com]; codes [Pattern.subscription.email,Pattern.email,Pattern.java.lang.String,Pattern]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [subscription.email,email]; arguments []; default message [email],[Ljavax.validation.constraints.Pattern$Flag;@55667b3a,^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\\\.[A-Z]{2,6}$]; default message [Email must be valid]] [Field error in object 'subscription' on field 'birthdate': rejected value [3990-04-04]; codes [Past.subscription.birthdate,Past.birthdate,Past.java.time.LocalDate,Past]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [subscription.birthdate,birthdate]; arguments []; default message [birthdate]]; default message [Birthdate cannot be in the future]] [Field error in object 'subscription' on field 'newsletterId': rejected value [null]; codes [NotNull.subscription.newsletterId,NotNull.newsletterId,NotNull.java.lang.Long,NotNull]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [subscription.newsletterId,newsletterId]; arguments []; default message [newsletterId]]; default message [Newsletter Id must be specified]] \"\n    },\n    \"message\": \"Validation error\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete OK",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "PostmanToken",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "Postman",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:38081/rest/subscriptions/3",
+							"host": [
+								"localhost"
+							],
+							"port": "38081",
+							"path": [
+								"rest",
+								"subscriptions",
+								"3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete OK",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:38081/rest/subscriptions/3",
+									"host": [
+										"localhost"
+									],
+									"port": "38081",
+									"path": [
+										"rest",
+										"subscriptions",
+										"3"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 10 Jun 2021 16:00:28 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": \"NOT_FOUND\",\n    \"subscriptionData\": null,\n    \"payload\": null,\n    \"message\": \"Entity of id: 3 was not found.\"\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}

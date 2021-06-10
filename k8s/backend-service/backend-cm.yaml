@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: backend-service-cm
+data:
+  application.properties: |+
+    ###########################################
+    # Service's Configuration
+    ##########################################
+    server.port = 8080
+    api.username = Postman
+    api.token = PostmanToken
+    ###########################################
+    ###########################################
+    # Subscription Service Parameters
+    ##########################################
+    endpoint.host = http://subscription-service
+    endpoint.port = 8081
+    endpoint.root = rest/subscriptions
+    ###########################################

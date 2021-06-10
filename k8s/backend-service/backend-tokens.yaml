@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: backend-service-tokens
+data:
+  access_tokens.json: |+
+    [
+    {
+    "applicationId": "Postman",
+    "token": "6cd262cd46182ad2f958510dc6503f3a159db263165de26c266320d263bae9b4",
+    "role": "DEV"
+    }
+    ]

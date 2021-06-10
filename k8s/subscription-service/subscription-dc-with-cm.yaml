@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: subscription-service
+spec:
+  selector:
+    matchLabels:
+      run: subscription-service
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        run: subscription-service
+    spec:
+      containers:
+      - name: subscription-service
+        image: moconinja/subscription-service:MINIKUBE
+        ports:
+        - containerPort: 8081
+        env:
+        - name: ACCESS_TOKENS_PATH
+          value: "/subscription-service/access_tokens.json"
+        volumeMounts:
+        - name: application-config
+          mountPath: "/subscription-service/application.properties"
+          subPath: "application.properties"
+          readOnly: true
+        - name: application-tokens
+          mountPath: "/subscription-service/access_tokens.json"
+          subPath: "access_tokens.json"
+          readOnly: true
+      volumes:
+        - name: application-config
+          configMap:
+            name: subscription-service-cm
+            items:
+            - key: application.properties
+              path: application.properties
+        - name: application-tokens
+          configMap:
+            name: subscription-service-tokens
+            items:
+            - key: access_tokens.json
+              path: access_tokens.json

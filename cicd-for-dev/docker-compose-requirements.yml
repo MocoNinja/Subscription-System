@@ -1,0 +1,18 @@
+version: "3.1"
+services:
+  rabbitmq:
+    container_name: rabbitmq
+    image: rabbitmq:3-management
+    environment:
+      RABBITMQ_DEFAULT_USER: developer
+      RABBITMQ_DEFAULT_PASS: developer
+    networks:
+      - subscriptions_network
+  db:
+    container_name: db
+    image: database:DEV
+    networks:
+      - subscriptions_network
+networks:
+  subscriptions_network:
+    external: true

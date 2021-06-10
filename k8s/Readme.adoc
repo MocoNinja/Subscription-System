@@ -1,0 +1,17 @@
+= Resources for Kubernetes
+
+In this folder, there are the basic resources required for deploying the system in Kubernetes.
+
+This was tested with minikube.
+
+The templates used obtain the images from https://hub.docker.com/u/moconinja[my Dockerhub]. **These images / tags are not guaranteed to be available at all time**.
+
+The microservices read the `application.properties` injected in a _Config Map_, so the configuration is a little more dynamic.
+
+Although there is an example under `email-service` that doesn't use a `config-map` resource, every microservice uses an `application.properties` injected by the config map, instead of the one found in the _classpath_.
+
+This works with no extra config because SpringBoot replaces the `application.properties` in the classpath if one is found in the same directory where the _.jar_ file is, which we achieve with the `mountPath` configuration.
+
+Services are all internal to the cluster, except the **`backend-service's`**; since this component is intended to be accessed externally, this service was created differently, so it can be accessed _"from the outside"_.
+
+In the Postman requests mentioned in the `Readme.md`, the ones pointing to the `backend-service` hosted in the cluster are included for demonstration purposes; the ip depends on minikube, and can be obtained with: `minikube ip`.

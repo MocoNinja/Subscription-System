@@ -1,0 +1,32 @@
+= Subscriptions database
+
+This folder contains the Dockerfile and init script to generate a PostgreSQL database with a table.
+This table is intended to hold the "Subscriptions" model.
+
+Building and starting scripts are provided.
+
+Both scripts allow using the `-h` flag to display some usage tips.
+
+== Intended usage
+
+Build the image running:
+
+[source, bash]
+----
+./build_image.sh
+----
+
+This script also allows the `-v` flag, to specify an image tag (defaults to *latest*).
+
+Start a container running:
+
+[source, bash]
+----
+./start_container.sh
+----
+
+This script also allows the `-v` flag, to specify the image tag (defaults to *latest*) and the `-p` tag to specify the port that Docker will fordward to PostgreSQL's listening port (defaults to *65432*).
+
+== Other notes
+
+The image can be built and run normally, as it is a regular Docker image.

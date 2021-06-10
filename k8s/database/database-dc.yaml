@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: db
+spec:
+  selector:
+    matchLabels:
+      run: db
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        run: db
+    spec:
+      containers:
+      - name: db
+        image: moconinja/database:MINIKUBE
+        ports:
+        - containerPort: 5432

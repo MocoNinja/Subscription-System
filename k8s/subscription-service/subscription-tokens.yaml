@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: subscription-service-tokens
+data:
+  access_tokens.json: |+
+    [
+    {
+      "applicationId": "MainBackend",
+      "token": "e9aca3534679635875baf1ec48ace925b1de441c2e139900f5449231ae59c075",
+      "role": "APP"
+    },
+    {
+      "applicationId": "Postman",
+      "token": "6cd262cd46182ad2f958510dc6503f3a159db263165de26c266320d263bae9b4",
+      "role": "DEV"
+    }
+    ]

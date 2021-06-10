@@ -1,0 +1,40 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: subscription-service-cm
+data:
+  application.properties: |+
+    ###########################################
+    # Service's Configuration
+    ##########################################
+    server.port = 8081
+    # I don't want swagger to be exposed in Kubernetes, so I leave this property empty
+    springdoc.swagger-ui.path=
+    ##########################################
+    ###########################################
+    # Data Source
+    ##########################################
+    spring.datasource.url=jdbc:postgresql://db:5432/SUBSCRIPTIONS
+    spring.datasource.username=developer
+    spring.datasource.password=developer
+    spring.datasource.initialization-mode=never
+    spring.datasource.platform=postgres
+    spring.jpa.hibernate.ddl-auto=none
+    spring.jpa.show-sql=true
+    spring.jpa.properties.hibernate.format_sql=true
+    spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQL81Dialect
+    ###########################################
+    ###########################################
+    # RabbitMQ configuration
+    ###########################################
+    ## Local
+    #spring.rabbitmq.host=localhost
+    ## Docker Compose
+    spring.rabbitmq.host=rabbitmq
+    spring.rabbitmq.port=5672
+    spring.rabbitmq.username=developer
+    spring.rabbitmq.password=developer
+    spring.rabbitmq.queue=testQueue
+    spring.rabbitmq.exchange=testExchange
+    spring.rabbitmq.routingkey=testkey
+    ##########################################

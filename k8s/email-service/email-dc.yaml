@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: email-service
+spec:
+  selector:
+    matchLabels:
+      run: email-service
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        run: email-service
+    spec:
+      containers:
+      - name: email-service
+        image: moconinja/email-service:MINIKUBE
+        ports:
+        - containerPort: 8082
